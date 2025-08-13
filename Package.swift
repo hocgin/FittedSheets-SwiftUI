@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "FittedSheetsSwiftUI",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13),
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/gordontucker/FittedSheets",
-                 from: "2.6.1")
+                 .upToNextMajor(from: "2.6.1")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -24,5 +24,4 @@ let package = Package(
         .target(
             name: "FittedSheetsSwiftUI",
             dependencies: ["FittedSheets"]),
-    ]
-)
+    ])
